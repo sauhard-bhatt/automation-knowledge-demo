@@ -1,24 +1,26 @@
-# Documentation Gap – ArgoCD Onboarding
+# ArgoCD Sync Failure – Destination cluster mismatch
 
 ## Problem
-ArgoCD onboarding document did not mention that namespace must exist before deployment.
+Application does not deploy to the expected cluster. Sync fails or resources appear in the wrong place.
 
-## Impact
-Multiple teams failed onboarding.
+## Platform
+ArgoCD / AKS
 
-## Proposed Fix
-Add namespace validation step in onboarding guide.
+## Error Message
+cluster "Customer-Service-prod" not found
 
-## Owner
-Platform Team
+## Root Cause
+ArgoCD Application destination.name references a cluster that is not registered in ArgoCD (or wrong cluster name).
 
-# Automation Idea – ArgoCD Namespace Validation
+## Fix
+1. In ArgoCD: Settings → Clusters, verify the destination cluster exists/registered.
+2. Compare the Application spec.destination.name to the registered cluster name.
+3. Update the Application destination to the correct cluster.
+4. Re-sync.
 
-## Problem
-ArgoCD deployments fail if namespace does not exist.
+## Prevention
+- Standardize destination cluster naming in onboarding docs.
+- Add validation for destination cluster name during PR review.
 
-## Proposed Solution
-Add GitHub Action pre-flight validation that checks namespace existence.
-
-## Benefit
-Prevents deployment failures before ArgoCD sync.
+## Automation Opportunity
+Create a preflight validator that checks destination.name matches one of the registered clusters (via ArgoCD API).
