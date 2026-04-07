@@ -1,6 +1,6 @@
 ---
-id: INC-XXXX
-type: incident
+id: GAP-XXXX
+type: doc-gap
 title: <short-title>
 domain: argocd
 platform: aks
@@ -9,14 +9,12 @@ status: <draft|published|deprecated>
 owner: <team-or-alias>
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
-tags:
-	- argocd
-	- sync-failure
+tags: []
 related_ids: []
 error_signatures: []
 ---
 
-# Incident: <title>
+# Doc Gap: <title>
 
 ## Summary
 
@@ -36,6 +34,13 @@ error_signatures: []
 
 ## Related Artifacts
 
+- Related Incident:
 - Related Runbook:
-- Related Doc Gap:
 - Related Automation:
+
+## Documentation Change Proposal
+
+- Source document:
+- Missing section:
+- Proposed text:
+- Validation criteria:

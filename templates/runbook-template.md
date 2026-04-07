@@ -1,6 +1,6 @@
 ---
-id: INC-XXXX
-type: incident
+id: RBK-XXXX
+type: runbook
 title: <short-title>
 domain: argocd
 platform: aks
@@ -9,14 +9,12 @@ status: <draft|published|deprecated>
 owner: <team-or-alias>
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
-tags:
-	- argocd
-	- sync-failure
+tags: []
 related_ids: []
 error_signatures: []
 ---
 
-# Incident: <title>
+# Runbook: <title>
 
 ## Summary
 
@@ -36,6 +34,6 @@ error_signatures: []
 
 ## Related Artifacts
 
-- Related Runbook:
+- Related Incident:
 - Related Doc Gap:
 - Related Automation:

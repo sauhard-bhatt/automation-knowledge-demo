@@ -9,9 +9,7 @@ status: <draft|published|deprecated>
 owner: <team-or-alias>
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
-tags:
-	- argocd
-	- sync-failure
+tags: []
 related_ids: []
 error_signatures: []
 ---
@@ -33,6 +31,18 @@ error_signatures: []
 ## Prevention
 
 ## Automation Hooks
+
+### Trigger Condition
+
+### Required Inputs
+
+### Safe Checks
+
+### Action Steps
+
+### Expected Output
+
+### Rollback
 
 ## Related Artifacts
 

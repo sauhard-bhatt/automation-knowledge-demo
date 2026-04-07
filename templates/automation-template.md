@@ -1,6 +1,6 @@
 ---
-id: INC-XXXX
-type: incident
+id: AUT-XXXX
+type: automation
 title: <short-title>
 domain: argocd
 platform: aks
@@ -9,14 +9,12 @@ status: <draft|published|deprecated>
 owner: <team-or-alias>
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
-tags:
-	- argocd
-	- sync-failure
+tags: []
 related_ids: []
 error_signatures: []
 ---
 
-# Incident: <title>
+# Automation: <title>
 
 ## Summary
 
@@ -34,8 +32,20 @@ error_signatures: []
 
 ## Automation Hooks
 
+### Trigger Condition
+
+### Required Inputs
+
+### Safe Checks
+
+### Action Steps
+
+### Expected Output
+
+### Rollback
+
 ## Related Artifacts
 
+- Related Incident:
 - Related Runbook:
 - Related Doc Gap:
-- Related Automation:
