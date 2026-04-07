@@ -1,11 +1,13 @@
 # Error Signatures Index
 
-Map exact error text to incident IDs for deterministic lookup.
+**Match your error to the incident, copy the fix.**
 
-| Signature | Incident ID | First Action | Primary Runbook |
-|---|---|---|---|
-| namespaces \"pad-dev\" not found | INC-0001 | Create namespace and re-sync | RBK-0001 |
-| open values/dev.yaml: no such file or directory | INC-0002 | Validate values path in source config | RBK-0001 |
-| cluster \"Customer-Service-prod\" not found | INC-0003 | Validate destination cluster registration | RBK-0001 |
-| forbidden: User \"system:serviceaccount:argocd:argocd-application-controller\" cannot create resource \"namespaces\" | INC-0004 | Validate ArgoCD controller RBAC | RBK-0001 |
-| Sync failed: hook / Job \"db-migrate\" failed | INC-0005 | Inspect job logs and dependencies | RBK-0001 |
+| Error Pattern | Incident | Fix Link |
+|---|---|---|
+| `namespaces ".*" not found` | INC-0001 | [incident-inc-0001-namespace-missing.md](../knowledge/incidents/incident-inc-0001-namespace-missing.md) |
+| `open values.*: no such file` | INC-0002 | [incident-inc-0002-values-file-missing.md](../knowledge/incidents/incident-inc-0002-values-file-missing.md) |
+| `cluster ".*" not found` | INC-0003 | [incident-inc-0003-destination-mismatch.md](../knowledge/incidents/incident-inc-0003-destination-mismatch.md) |
+| `forbidden: User.*cannot create resource` | INC-0004 | [incident-inc-0004-rbac-denied.md](../knowledge/incidents/incident-inc-0004-rbac-denied.md) |
+| `Sync failed: hook / Job ".*" failed` | INC-0005 | [incident-inc-0005-hook-failed.md](../knowledge/incidents/incident-inc-0005-hook-failed.md) |
+
+**Quick reference: [QUICK-FIX.md](../QUICK-FIX.md)**

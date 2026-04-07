@@ -2,11 +2,22 @@
 
 Markdown-first knowledge base for ArgoCD troubleshooting, runbook quality, and future remediation automation.
 
+## Quick Start
+
+**Got an ArgoCD error?** → [START-HERE.md](START-HERE.md)
+
+**Want copy-paste fixes?** → [QUICK-FIX.md](QUICK-FIX.md)
+
+**Want complete incident details?** → [knowledge/incidents/](knowledge/incidents/)
+
+---
+
 ## Goals
 
 - Keep operational knowledge human-readable and machine-parseable.
 - Make incident retrieval deterministic for GitHub Copilot.
 - Enable future automation by linking signatures to runbooks and automation hooks.
+- **Precision-first answers: no fluff, exact fixes.** → [PRECISION-GUIDE.md](PRECISION-GUIDE.md)
 
 ## Canonical Information Architecture
 
