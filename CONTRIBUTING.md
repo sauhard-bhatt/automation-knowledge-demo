@@ -2,7 +2,16 @@
 
 ## Scope
 
-This repository is a Markdown-first operational knowledge graph for troubleshooting and automation design.
+This repository is a Markdown-first operational knowledge graph for cross-platform troubleshooting (ArgoCD, App Service, ACA, Podman, WebLogic, etc).
+
+## Supported Platforms
+
+- `argocd+aks`
+- `appservice`
+- `aca` (Azure Container Apps)
+- `podman`
+- `weblogic`
+- More platforms welcome
 
 ## Artifact Types
 
@@ -40,7 +49,7 @@ All new knowledge artifacts must include:
 - `type`
 - `title`
 - `domain`
-- `platform`
+- `platforms` ← **NEW: array of platforms, e.g., [argocd+aks, appservice, aca]**
 - `severity`
 - `status`
 - `owner`
@@ -70,11 +79,23 @@ Use exact heading names:
 - Include ID in link text (example: `INC-0001 Namespace Missing`).
 - Add reciprocal links between related artifacts.
 - Update the relevant index file for every new or updated artifact.
+- Update **platform-aware** indexes: [indexes/by-platform.md](indexes/by-platform.md) and [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md).
+
+## Precision-First Writing
+
+- **One error signature = one incident file.**
+- **Fixes are platform-specific.** Same error, different platforms, different commands.
+- **No fluff.** Answer contains only information needed to resolve issue.
+- No Background, History, or Context unless required for the fix.
 
 ## Pull Request Checklist
 
+- Platform specified in frontmatter.
 - Added or updated frontmatter.
 - Used canonical headings.
 - Added reciprocal links.
 - Updated type index under `indexes/`.
-- Added or updated signature mapping in `indexes/error-signatures-index.md` when relevant.
+- Updated platform indexes:
+  - [indexes/by-platform.md](indexes/by-platform.md)
+  - [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md)
+- Fixes are platform-specific (no one-size-fits-all commands).

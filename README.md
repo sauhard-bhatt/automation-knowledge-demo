@@ -1,23 +1,41 @@
 # Automation Knowledge Demo
 
-Markdown-first knowledge base for ArgoCD troubleshooting, runbook quality, and future remediation automation.
+Markdown-first knowledge base for cross-platform troubleshooting: **ArgoCD+AKS, App Service, ACA, Podman, WebLogic, and more**.
 
-## Quick Start
+## Entry Points
 
-**Got an ArgoCD error?** → [START-HERE.md](START-HERE.md)
+| Use Case | Go To |
+|---|---|
+| **Pick platform, find error, copy fix** | [BY-PLATFORM.md](BY-PLATFORM.md) |
+| **Quick fixes by platform (copy-paste)** | [QUICK-FIX-PLATFORM.md](QUICK-FIX-PLATFORM.md) |
+| **Guided 4-step troubleshooting** | [START-HERE.md](START-HERE.md) |
+| **Search by platform + error pattern** | [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md) |
+| **All incidents by error signature** | [indexes/error-signatures-index.md](indexes/error-signatures-index.md) |
+| **All incidents by platform** | [indexes/by-platform.md](indexes/by-platform.md) |
 
-**Want copy-paste fixes?** → [QUICK-FIX.md](QUICK-FIX.md)
+## Key Principles
 
-**Want complete incident details?** → [knowledge/incidents/](knowledge/incidents/)
+- **Precision-first:** No fluff, exact fixes only → [PRECISION-GUIDE.md](PRECISION-GUIDE.md)
+- **Platform-aware:** Same error, different platform, different fix
+- **Copy-paste ready:** All commands are tested and immediately runnable
+- **Machine-readable:** Frontmatter enables Copilot and automation routing
 
----
+## Contributing
 
-## Goals
+See [CONTRIBUTING.md](CONTRIBUTING.md) for:
+- Supported platforms
+- File naming rules
+- Required frontmatter
+- Canonical sections
+- Platform-aware linking
 
-- Keep operational knowledge human-readable and machine-parseable.
-- Make incident retrieval deterministic for GitHub Copilot.
-- Enable future automation by linking signatures to runbooks and automation hooks.
-- **Precision-first answers: no fluff, exact fixes.** → [PRECISION-GUIDE.md](PRECISION-GUIDE.md)
+## Controlled Vocabulary
+
+See [TAXONOMY.md](TAXONOMY.md) for:
+- Platforms list
+- Severity levels
+- Tag families
+- Error signature format
 
 ## Canonical Information Architecture
 

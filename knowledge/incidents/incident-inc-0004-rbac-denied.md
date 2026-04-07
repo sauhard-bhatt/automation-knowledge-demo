@@ -3,7 +3,7 @@ id: INC-0004
 type: incident
 title: RBAC permission denied
 domain: argocd
-platform: aks
+platforms: [argocd+aks]
 severity: sev-1
 status: published
 created: 2026-04-06

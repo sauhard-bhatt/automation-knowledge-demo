@@ -3,7 +3,7 @@ id: INC-0001
 type: incident
 title: Namespace missing
 domain: argocd
-platform: aks
+platforms: [argocd+aks]
 severity: sev-2
 status: published
 created: 2026-04-06

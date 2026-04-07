@@ -3,7 +3,7 @@ id: INC-0003
 type: incident
 title: Destination cluster mismatch
 domain: argocd
-platform: aks
+platforms: [argocd+aks]
 severity: sev-2
 status: published
 created: 2026-04-06

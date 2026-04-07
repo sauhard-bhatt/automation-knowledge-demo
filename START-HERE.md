@@ -1,36 +1,39 @@
-# Troubleshooting: 3 Steps
+# Troubleshooting: 4 Steps
 
-## Step 1: Find Your Error
+## Step 1: Pick Your Platform
 
-Copy your error message and search [indexes/error-signatures-index.md](indexes/error-signatures-index.md).
+Go to: [BY-PLATFORM.md](BY-PLATFORM.md) or [indexes/by-platform.md](indexes/by-platform.md)
 
-## Step 2: Click Incident Link
+Find your platform (ArgoCD+AKS, App Service, ACA, Podman, WebLogic, etc).
 
-Click the incident file link.
+## Step 2: Find Your Error
 
-## Step 3: Copy & Run Fix
+Match your error to the table row.
 
-Copy the fix command. Run it. Verify with the verify command.
+## Step 3: Click Incident Link (optional)
+
+For quick fix → copy command from table.
+
+For full details → click incident link.
+
+## Step 4: Copy & Run
+
+Run fix command. Verify with verify command.
 
 ---
 
 ## Example
 
-**Your error:**
-```
-cluster "Customer-Service-prod" not found
-```
+**Platform:** ArgoCD + AKS
 
-**Look in:** [indexes/error-signatures-index.md](indexes/error-signatures-index.md) → find `cluster ".*" not found`
+**Error:** namespaces "pad-dev" not found
 
-**Click:** [incident-inc-0003-destination-mismatch.md](knowledge/incidents/incident-inc-0003-destination-mismatch.md)
+**Go to:** [indexes/by-platform.md](indexes/by-platform.md) → Table "ArgoCD + AKS" → Row "namespaces" → Copy fix
 
-**Run the Fix section commands.**
+**Run:** `kubectl create namespace pad-dev`
 
 ---
 
-## Alternative: Quick Reference
+## Alternative
 
-For minimal format, see [QUICK-FIX.md](QUICK-FIX.md).
-
-All fixes are copy-paste ready.
+For all platforms + all errors: [QUICK-FIX.md](QUICK-FIX.md)

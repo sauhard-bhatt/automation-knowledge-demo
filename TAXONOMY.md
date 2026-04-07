@@ -2,6 +2,14 @@
 
 Controlled vocabulary improves Copilot retrieval and enables deterministic automation routing.
 
+## Platforms
+
+- `argocd+aks` — ArgoCD deployments on Azure Kubernetes Service
+- `appservice` — Azure App Service (web apps, API apps)
+- `aca` — Azure Container Apps
+- `podman` — Podman container runtime
+- `weblogic` — Oracle WebLogic Application Server
+
 ## Domains
 
 - `argocd`
@@ -10,13 +18,9 @@ Controlled vocabulary improves Copilot retrieval and enables deterministic autom
 - `aks`
 - `rbac`
 - `ci-cd`
-
-## Platforms
-
-- `aks`
-- `argocd`
-- `github-actions`
-- `rundeck`
+- `appservice`
+- `container-apps`
+- `weblogic`
 
 ## Severity
 
@@ -36,10 +40,12 @@ Controlled vocabulary improves Copilot retrieval and enables deterministic autom
 - Failure phase: `preflight`, `manifest-generation`, `apply`, `post-sync`
 - Failure class: `namespace-missing`, `rbac-denied`, `values-file-missing`, `destination-mismatch`, `hook-job-failed`
 - Action type: `triage`, `runbook`, `prevention`, `automation`
+- Platform-specific: `appservice`, `aca`, `podman`, `weblogic`, `argocd`, `kubernetes`
 
 ## Error Signature Guidance
 
 - Capture exact text from logs/events.
 - Keep one signature per list entry.
 - Prefer literal phrases over paraphrasing.
-- Add top-level mapping in `indexes/error-signatures-index.md`.
+- Add top-level mapping in `indexes/error-signatures-by-platform.md`.
+- **Platform-aware:** same error text may appear on multiple platforms with different fixes.

@@ -3,7 +3,7 @@ id: INC-0005
 type: incident
 title: Sync hook job failed
 domain: argocd
-platform: aks
+platforms: [argocd+aks]
 severity: sev-1
 status: published
 created: 2026-04-06
