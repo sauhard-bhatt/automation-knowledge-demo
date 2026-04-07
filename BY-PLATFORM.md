@@ -1,51 +1,23 @@
 # Platform-Based Troubleshooting
 
-**Pick your platform below. All fixes are platform-specific.**
+Pick platform first, then match the error and copy the fix.
 
----
+## Primary Lookup
 
-## ArgoCD + AKS
+- Platform matrix: [indexes/by-platform.md](indexes/by-platform.md)
+- Error signatures by platform: [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md)
+- Quick copy-paste fixes: [QUICK-FIX-PLATFORM.md](QUICK-FIX-PLATFORM.md)
 
-- [namespaces ".*" not found](#namespace-missing-argocd-aks)
-- [open values.*: no such file](#helm-values-argocd-aks)
-- [cluster ".*" not found](#destination-mismatch-argocd-aks)
-- [forbidden: User.*cannot create](#rbac-denied-argocd-aks)
-- [Sync failed: hook / Job](#hook-failed-argocd-aks)
+## Supported Platforms
 
----
+- ArgoCD + AKS
+- Azure App Service
+- Azure Container Apps (ACA)
+- Podman
+- WebLogic
 
-## Azure App Service
+## Demo and Behavior Contract
 
-- [TargetInvocationException](#targetinvocation-appservice)
-- [401 Unauthorized](#auth-appservice)
-- [503 Service Unavailable](#unavailable-appservice)
-
----
-
-## Azure Container Apps (ACA)
-
-- [Container failed to start](#container-start-aca)
-- [Environment variable not found](#envvar-aca)
-- [Port already in use](#port-aca)
-
----
-
-## App Service on Podman
-
-- [Image pull failed](#image-pull-podman)
-- [Container runtime error](#runtime-podman)
-- [Volume mount denied](#volume-podman)
-
----
-
-## WebLogic
-
-- [ClassNotFoundException](#classnotfound-weblogic)
-- [Connection refused](#connrefused-weblogic)
-- [OutOfMemoryError](#oom-weblogic)
-
----
-
-**Full incident library: [knowledge/incidents/](knowledge/incidents/) — search by platform tag.**
-
-**Quick fix (any platform): [QUICK-FIX.md](QUICK-FIX.md)**
+- Demo scenarios: [RBK-0003](knowledge/runbooks/runbook-rbk-0003-copilot-error-query-demo.md)
+- Onboarding quick steps: [RBK-0004](knowledge/runbooks/runbook-rbk-0004-platform-onboarding-quick-steps.md)
+- Copilot response contract: [ADR-0002](knowledge/decisions/decision-adr-0002-copilot-precision-response-contract.md)

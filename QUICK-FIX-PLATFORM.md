@@ -77,12 +77,23 @@ Verify: `az webapp show --name <app-name> --resource-group <rg-name> | grep -i "
 ---
 
 ### 401 Unauthorized
-Pending: See [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md)
+```bash
+az webapp auth show --name <app-name> --resource-group <rg-name>
+az webapp config appsettings list --name <app-name> --resource-group <rg-name>
+az webapp identity assign --name <app-name> --resource-group <rg-name>
+az webapp restart --name <app-name> --resource-group <rg-name>
+```
+Verify: `curl -I https://<app-name>.azurewebsites.net`
 
 ---
 
 ### 503 Service Unavailable
-Pending: See [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md)
+```bash
+az webapp log tail --name <app-name> --resource-group <rg-name>
+az webapp restart --name <app-name> --resource-group <rg-name>
+curl -I https://<app-name>.azurewebsites.net/health
+```
+Verify: `curl -I https://<app-name>.azurewebsites.net`
 
 ---
 
@@ -100,12 +111,20 @@ Verify: `az containerapp show --name <app-name> --resource-group <rg-name> | gre
 ---
 
 ### Environment variable not found
-Pending: See [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md)
+```bash
+az containerapp show --name <app-name> --resource-group <rg-name> | jq '.properties.template.containers[0].env'
+az containerapp update --name <app-name> --resource-group <rg-name> --set-env-vars <KEY>=<VALUE>
+```
+Verify: `az containerapp logs show --name <app-name> --resource-group <rg-name>`
 
 ---
 
 ### Port already in use
-Pending: See [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md)
+```bash
+az containerapp ingress update --name <app-name> --resource-group <rg-name> --target-port <port>
+az containerapp update --name <app-name> --resource-group <rg-name> --image <image>
+```
+Verify: `az containerapp show --name <app-name> --resource-group <rg-name> | grep -i targetPort`
 
 ---
 
@@ -125,12 +144,23 @@ Verify: `podman image ls | grep <image>`
 ---
 
 ### Container runtime error
-Pending: See [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md)
+```bash
+podman ps -a
+podman logs <container-id>
+podman rm -f <container-id>
+podman run --name <container-name> <image>:<tag>
+```
+Verify: `podman ps`
 
 ---
 
 ### Volume mount denied
-Pending: See [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md)
+```bash
+ls -la <host-path>
+podman run -v <host-path>:<container-path>:Z <image>:<tag>
+chmod -R 755 <host-path>
+```
+Verify: `podman inspect <container-id> | grep -i Mounts -A 20`
 
 ---
 
@@ -150,12 +180,23 @@ Verify: `tail -f $DOMAIN_HOME/servers/AdminServer/logs/AdminServer.log | grep "S
 ---
 
 ### Connection refused
-Pending: See [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md)
+```bash
+ps -ef | grep -i weblogic
+netstat -an | grep <port>
+$DOMAIN_HOME/bin/startWebLogic.sh
+```
+Verify: `curl -I http://<host>:<port>/console`
 
 ---
 
 ### OutOfMemoryError
-Pending: See [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md)
+```bash
+tail -f $DOMAIN_HOME/servers/AdminServer/logs/AdminServer.log | grep -i OutOfMemoryError
+# Set USER_MEM_ARGS in startup config, then restart:
+$DOMAIN_HOME/bin/stopWebLogic.sh
+$DOMAIN_HOME/bin/startWebLogic.sh
+```
+Verify: `tail -f $DOMAIN_HOME/servers/AdminServer/logs/AdminServer.log | grep -i RUNNING`
 
 ---
 

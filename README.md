@@ -1,41 +1,38 @@
 # Automation Knowledge Demo
 
-Markdown-first knowledge base for cross-platform troubleshooting: **ArgoCD+AKS, App Service, ACA, Podman, WebLogic, and more**.
+Markdown-first knowledge base for cross-platform troubleshooting: ArgoCD+AKS, App Service, ACA, Podman, WebLogic, and more.
 
 ## Entry Points
 
 | Use Case | Go To |
 |---|---|
-| **Pick platform, find error, copy fix** | [BY-PLATFORM.md](BY-PLATFORM.md) |
-| **Quick fixes by platform (copy-paste)** | [QUICK-FIX-PLATFORM.md](QUICK-FIX-PLATFORM.md) |
-| **Guided 4-step troubleshooting** | [START-HERE.md](START-HERE.md) |
-| **Search by platform + error pattern** | [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md) |
-| **All incidents by error signature** | [indexes/error-signatures-index.md](indexes/error-signatures-index.md) |
-| **All incidents by platform** | [indexes/by-platform.md](indexes/by-platform.md) |
+| Pick platform, find error, copy fix | [BY-PLATFORM.md](BY-PLATFORM.md) |
+| Quick fixes by platform (copy-paste) | [QUICK-FIX-PLATFORM.md](QUICK-FIX-PLATFORM.md) |
+| Guided troubleshooting flow | [START-HERE.md](START-HERE.md) |
+| Search by platform + error pattern | [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md) |
+| All incidents by platform | [indexes/by-platform.md](indexes/by-platform.md) |
+| Copilot prompt examples | [indexes/copilot-query-examples.md](indexes/copilot-query-examples.md) |
+
+## Copilot Behavior Contract
+
+- Decision: [ADR-0002](knowledge/decisions/decision-adr-0002-copilot-precision-response-contract.md)
+- Demo use-cases: [RBK-0003](knowledge/runbooks/runbook-rbk-0003-copilot-error-query-demo.md)
+- Onboarding quick steps: [RBK-0004](knowledge/runbooks/runbook-rbk-0004-platform-onboarding-quick-steps.md)
 
 ## Key Principles
 
-- **Precision-first:** No fluff, exact fixes only → [PRECISION-GUIDE.md](PRECISION-GUIDE.md)
-- **Platform-aware:** Same error, different platform, different fix
-- **Copy-paste ready:** All commands are tested and immediately runnable
-- **Machine-readable:** Frontmatter enables Copilot and automation routing
+- Precision-first: No fluff, exact fixes only → [PRECISION-GUIDE.md](PRECISION-GUIDE.md)
+- Platform-aware: Same error, different platform, different fix
+- Copy-paste ready: Commands are immediately runnable
+- Machine-readable: Frontmatter enables Copilot and automation routing
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for:
-- Supported platforms
-- File naming rules
-- Required frontmatter
-- Canonical sections
-- Platform-aware linking
+See [CONTRIBUTING.md](CONTRIBUTING.md) for supported platforms, file naming, required frontmatter, and admin maintenance workflow.
 
 ## Controlled Vocabulary
 
-See [TAXONOMY.md](TAXONOMY.md) for:
-- Platforms list
-- Severity levels
-- Tag families
-- Error signature format
+See [TAXONOMY.md](TAXONOMY.md) for platforms, severity, tags, and error-signature conventions.
 
 ## Canonical Information Architecture
 
@@ -44,6 +41,10 @@ See [TAXONOMY.md](TAXONOMY.md) for:
 ├── README.md
 ├── CONTRIBUTING.md
 ├── TAXONOMY.md
+├── PRECISION-GUIDE.md
+├── BY-PLATFORM.md
+├── QUICK-FIX-PLATFORM.md
+├── START-HERE.md
 ├── templates/
 │   ├── incident-template.md
 │   ├── runbook-template.md
@@ -57,46 +58,20 @@ See [TAXONOMY.md](TAXONOMY.md) for:
 │   ├── automations/
 │   └── decisions/
 └── indexes/
-		├── incidents-index.md
-		├── runbooks-index.md
-		├── doc-gaps-index.md
-		├── automations-index.md
-		├── tags-index.md
-		└── error-signatures-index.md
+    ├── incidents-index.md
+    ├── runbooks-index.md
+    ├── decisions-index.md
+    ├── by-platform.md
+    ├── error-signatures-by-platform.md
+    ├── copilot-query-examples.md
+    └── tags-index.md
 ```
 
 ## Legacy Content
 
-Existing folders are still valid inputs while migrating into `knowledge/`:
+Existing folders are still valid inputs while migrating into knowledge:
 
-- `cases/` -> `knowledge/incidents/`
-- `runbooks/` -> `knowledge/runbooks/`
-- `doc-gaps/` -> `knowledge/doc-gaps/`
-- `enhancement-idea/` -> `knowledge/automations/`
-
-## Naming Convention
-
-Use lowercase kebab-case and stable IDs:
-
-- Incident: `incident-inc-0001-argocd-namespace-missing.md`
-- Runbook: `runbook-rbk-0001-argocd-sync-failures.md`
-- Doc Gap: `docgap-gap-0001-onboarding-namespace-step.md`
-- Automation: `automation-aut-0001-destination-preflight-validator.md`
-- Decision: `decision-adr-0001-case-format-standard.md`
-
-## Linking Convention
-
-- Use relative Markdown links only.
-- Include the artifact ID in visible link text.
-- Add reciprocal links whenever two artifacts are related.
-- Prefer explicit labels in each document:
-	- `Related Incident:`
-	- `Related Runbook:`
-	- `Related Doc Gap:`
-	- `Related Automation:`
-
-## Source of Truth
-
-- Folder-level conventions: `CONTRIBUTING.md`
-- Controlled vocabulary: `TAXONOMY.md`
-- Cross-document navigation: files in `indexes/`
+- cases -> knowledge/incidents
+- runbooks -> knowledge/runbooks
+- doc-gaps -> knowledge/doc-gaps
+- enhancement-idea -> knowledge/automations
