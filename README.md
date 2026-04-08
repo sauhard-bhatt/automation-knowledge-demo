@@ -20,6 +20,12 @@ Minimal knowledge base for app dev teams who need one of three outcomes: identif
 | Find the fix for a broken pipeline | [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md) |
 | Step-by-step migration / adoption guide with checklist | [indexes/runbooks-index.md](indexes/runbooks-index.md) |
 
+## Admin Governance (Demo Setup)
+
+Admin process files are currently kept in [compliance-and-governance](compliance-and-governance/README.md).
+
+This is temporary for demos and can be moved later to a private admin repository.
+
 
 ## Migration Runbooks
 
