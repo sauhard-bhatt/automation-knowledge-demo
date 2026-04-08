@@ -49,4 +49,4 @@ argocd app get <app-name> | grep -E "Status|Health"
 - Related Incident: [INC-0001](../incidents/incident-inc-0001-namespace-missing.md)
 - Related Incident: [INC-0002](../incidents/incident-inc-0002-values-file-missing.md)
 - Related Incident: [INC-0003](../incidents/incident-inc-0003-destination-mismatch.md)
-- Related Doc Gap: [GAP-0001](../doc-gaps/README.md)
+- Related Doc Gap: [DG-0001](../doc-gaps/docgap-dg-0001-argocd-namespace-not-preprovisioned.md)

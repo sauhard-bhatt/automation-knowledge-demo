@@ -3,7 +3,7 @@ id: AUT-XXXX
 type: automation
 title: <short-title>
 domain: argocd
-platform: aks
+platforms: [argocd+aks]
 severity: <sev-1|sev-2|sev-3|sev-4>
 status: <draft|published|deprecated>
 owner: <team-or-alias>

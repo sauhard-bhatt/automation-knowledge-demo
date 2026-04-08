@@ -3,10 +3,11 @@ id: GAP-XXXX
 type: doc-gap
 title: <short-title>
 domain: argocd
-platform: aks
+platforms: [argocd+aks]
 severity: <sev-1|sev-2|sev-3|sev-4>
 status: <draft|published|deprecated>
 owner: <team-or-alias>
+gap_type: <missing-from-docs|documented-but-skipped|unknown>
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 tags: []
@@ -16,27 +17,48 @@ error_signatures: []
 
 # Doc Gap: <title>
 
-## Summary
+## What This Is
 
-## Symptoms
+## Error You Will See
 
-## Error Signatures
+## What Is Missing
 
-## Root Cause
+## Is This Step In Your Onboarding Documentation?
 
-## Resolution
+**Check your onboarding / deployment guide first.**
 
-## Verification
+### If yes — the step was documented, you missed it
 
-## Prevention
+The step is in the process doc. You can resolve this without waiting for DevOps.
 
-## Automation Hooks
+```bash
+# commands app dev can run themselves
+```
 
-## Related Artifacts
+### If no — this step was never documented
 
-- Related Incident:
-- Related Runbook:
-- Related Automation:
+This is a true gap. Two actions needed:
+
+1. Ask DevOps to do the setup:
+   > "Please [specific request]. It is needed for [app/service] to deploy."
+
+2. Ask the doc owner to add this step to the onboarding guide so the next team doesn't hit it.
+
+DevOps runs:
+```bash
+# commands DevOps runs
+```
+
+## How To Verify It Is Done
+
+```bash
+# verify commands
+```
+
+## Related
+
+- Incident:
+- Runbook:
 
 ## Documentation Change Proposal
 

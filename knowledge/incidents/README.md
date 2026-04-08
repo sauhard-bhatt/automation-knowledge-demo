@@ -14,4 +14,4 @@ Each incident should link to:
 - Zero or more doc gaps
 - Zero or more automation artifacts
 
-Also update [../../indexes/incidents-index.md](../../indexes/incidents-index.md) and [../../indexes/error-signatures-index.md](../../indexes/error-signatures-index.md).
+Also update [../../indexes/incidents-index.md](../../indexes/incidents-index.md) and [../../indexes/error-signatures-by-platform.md](../../indexes/error-signatures-by-platform.md).

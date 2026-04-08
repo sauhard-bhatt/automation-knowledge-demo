@@ -3,7 +3,7 @@ id: ADR-XXXX
 type: decision
 title: <short-title>
 domain: platform
-platform: shared
+platforms: [shared]
 severity: sev-4
 status: <draft|published|deprecated>
 owner: <team-or-alias>

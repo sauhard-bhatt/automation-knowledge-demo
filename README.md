@@ -1,17 +1,41 @@
 # Automation Knowledge Demo
 
-Markdown-first knowledge base for cross-platform troubleshooting: ArgoCD+AKS, App Service, ACA, Podman, WebLogic, and more.
+Knowledge base for app dev teams deploying on ArgoCD+AKS, App Service, ACA, Podman, WebLogic, and more.
+
+**Three use cases this repo solves:**
+
+| Situation | Description | Go To |
+|---|---|---|
+| **A — Missing step (first deploy)** | You deployed for the first time and hit an error. DevOps owns a prerequisite that was never set up. | [START-HERE.md → Situation A](START-HERE.md) → [indexes/doc-gaps-index.md](indexes/doc-gaps-index.md) |
+| **B — Pipeline regression** | Your pipeline was working. Today it failed. You need root cause and fix. | [START-HERE.md → Situation B](START-HERE.md) → [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md) |
+| **C — Migration / adoption** | How do I move my service from platform X to Y? How do I adopt a new workflow? Step-by-step with checklist. | [START-HERE.md → Situation C](START-HERE.md) → [indexes/runbooks-index.md](indexes/runbooks-index.md) |
+
+**Not sure which?** → [START-HERE.md](START-HERE.md)
 
 ## Entry Points
 
-| Use Case | Go To |
+| I want to… | Go To |
 |---|---|
-| Pick platform, find error, copy fix | [BY-PLATFORM.md](BY-PLATFORM.md) |
+| Find what prerequisite I'm missing (first deploy) | [indexes/doc-gaps-index.md](indexes/doc-gaps-index.md) |
+| Find the fix for a broken pipeline | [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md) |
+| Step-by-step migration / adoption guide with checklist | [indexes/runbooks-index.md](indexes/runbooks-index.md) |
+| Browse all incidents by platform | [indexes/by-platform.md](indexes/by-platform.md) |
 | Quick fixes by platform (copy-paste) | [QUICK-FIX-PLATFORM.md](QUICK-FIX-PLATFORM.md) |
-| Guided troubleshooting flow | [START-HERE.md](START-HERE.md) |
-| Search by platform + error pattern | [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md) |
-| All incidents by platform | [indexes/by-platform.md](indexes/by-platform.md) |
 | Copilot prompt examples | [indexes/copilot-query-examples.md](indexes/copilot-query-examples.md) |
+
+## Migration Runbooks
+
+| Scenario | Runbook |
+|---|---|
+| Migrate service from Podman to AKS with ArgoCD | [RBK-0005](knowledge/runbooks/runbook-rbk-0005-podman-to-aks-argocd-migration.md) |
+| Adopt ArgoCD for existing AKS service (GitOps workflow) | [RBK-0006](knowledge/runbooks/runbook-rbk-0006-adopt-argocd-for-existing-aks-service.md) |
+
+Each runbook includes:
+- ✅ Prerequisites checklist
+- ✅ Phase-by-phase steps with inline checkboxes
+- ✅ Verification commands after each step
+- ✅ Rollback instructions
+- ✅ Common issues table
 
 ## Copilot Behavior Contract
 
@@ -25,6 +49,7 @@ Markdown-first knowledge base for cross-platform troubleshooting: ArgoCD+AKS, Ap
 - Platform-aware: Same error, different platform, different fix
 - Copy-paste ready: Commands are immediately runnable
 - Machine-readable: Frontmatter enables Copilot and automation routing
+- Migration-ready: Step-by-step runbooks with embedded checklists
 
 ## Contributing
 
@@ -48,6 +73,7 @@ See [TAXONOMY.md](TAXONOMY.md) for platforms, severity, tags, and error-signatur
 ├── templates/
 │   ├── incident-template.md
 │   ├── runbook-template.md
+│   ├── runbook-migration-template.md
 │   ├── doc-gap-template.md
 │   ├── automation-template.md
 │   └── decision-template.md
@@ -60,18 +86,10 @@ See [TAXONOMY.md](TAXONOMY.md) for platforms, severity, tags, and error-signatur
 └── indexes/
     ├── incidents-index.md
     ├── runbooks-index.md
+    ├── automations-index.md
+    ├── doc-gaps-index.md
     ├── decisions-index.md
     ├── by-platform.md
     ├── error-signatures-by-platform.md
-    ├── copilot-query-examples.md
-    └── tags-index.md
+    └── copilot-query-examples.md
 ```
-
-## Legacy Content
-
-Existing folders are still valid inputs while migrating into knowledge:
-
-- cases -> knowledge/incidents
-- runbooks -> knowledge/runbooks
-- doc-gaps -> knowledge/doc-gaps
-- enhancement-idea -> knowledge/automations

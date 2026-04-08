@@ -58,4 +58,4 @@ Find your platform. Copy fix command. Done.
 
 ---
 
-**Quick search: [error-signatures-index.md](error-signatures-index.md)**
+**Quick search: [error-signatures-by-platform.md](error-signatures-by-platform.md)**
