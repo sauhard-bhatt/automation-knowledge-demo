@@ -57,7 +57,3 @@ Match your exact error text and platform to incident.
 | `OutOfMemoryError` | INC-0042 | Increase heap in startup args + restart |
 
 ---
-
-**For details: click incident link in [by-platform.md](by-platform.md)**
-
-**All incidents: [../knowledge/incidents/](../knowledge/incidents/)**

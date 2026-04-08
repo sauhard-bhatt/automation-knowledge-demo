@@ -89,6 +89,3 @@ Copilot will return:
 | Find what prereq I'm missing (first deploy) | [indexes/doc-gaps-index.md](indexes/doc-gaps-index.md) |
 | Find the fix for a broken pipeline | [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md) |
 | Step-by-step migration / adoption guide | [indexes/runbooks-index.md](indexes/runbooks-index.md) |
-| Browse all incidents by platform | [indexes/by-platform.md](indexes/by-platform.md) |
-| Copy-paste fix for known error | [QUICK-FIX-PLATFORM.md](QUICK-FIX-PLATFORM.md) |
-| See Copilot prompt examples | [indexes/copilot-query-examples.md](indexes/copilot-query-examples.md) |

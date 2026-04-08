@@ -1,6 +1,6 @@
 # Automation Knowledge Demo
 
-Knowledge base for app dev teams deploying on ArgoCD+AKS, App Service, ACA, Podman, WebLogic, and more.
+Minimal knowledge base for app dev teams who need one of three outcomes: identify a missed prerequisite, fix a broken deployment, or follow a migration/adoption guide.
 
 **Three use cases this repo solves:**
 
@@ -19,9 +19,7 @@ Knowledge base for app dev teams deploying on ArgoCD+AKS, App Service, ACA, Podm
 | Find what prerequisite I'm missing (first deploy) | [indexes/doc-gaps-index.md](indexes/doc-gaps-index.md) |
 | Find the fix for a broken pipeline | [indexes/error-signatures-by-platform.md](indexes/error-signatures-by-platform.md) |
 | Step-by-step migration / adoption guide with checklist | [indexes/runbooks-index.md](indexes/runbooks-index.md) |
-| Browse all incidents by platform | [indexes/by-platform.md](indexes/by-platform.md) |
-| Quick fixes by platform (copy-paste) | [QUICK-FIX-PLATFORM.md](QUICK-FIX-PLATFORM.md) |
-| Copilot prompt examples | [indexes/copilot-query-examples.md](indexes/copilot-query-examples.md) |
+
 
 ## Migration Runbooks
 
@@ -37,59 +35,30 @@ Each runbook includes:
 - ✅ Rollback instructions
 - ✅ Common issues table
 
-## Copilot Behavior Contract
-
-- Decision: [ADR-0002](knowledge/decisions/decision-adr-0002-copilot-precision-response-contract.md)
-- Demo use-cases: [RBK-0003](knowledge/runbooks/runbook-rbk-0003-copilot-error-query-demo.md)
-- Onboarding quick steps: [RBK-0004](knowledge/runbooks/runbook-rbk-0004-platform-onboarding-quick-steps.md)
-
 ## Key Principles
 
-- Precision-first: No fluff, exact fixes only → [PRECISION-GUIDE.md](PRECISION-GUIDE.md)
+- Precision-first: keep resolution content short and actionable.
 - Platform-aware: Same error, different platform, different fix
 - Copy-paste ready: Commands are immediately runnable
 - Machine-readable: Frontmatter enables Copilot and automation routing
 - Migration-ready: Step-by-step runbooks with embedded checklists
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for supported platforms, file naming, required frontmatter, and admin maintenance workflow.
-
-## Controlled Vocabulary
-
-See [TAXONOMY.md](TAXONOMY.md) for platforms, severity, tags, and error-signature conventions.
 
 ## Canonical Information Architecture
 
 ```text
 .
 ├── README.md
-├── CONTRIBUTING.md
-├── TAXONOMY.md
-├── PRECISION-GUIDE.md
-├── BY-PLATFORM.md
-├── QUICK-FIX-PLATFORM.md
 ├── START-HERE.md
 ├── templates/
 │   ├── incident-template.md
-│   ├── runbook-template.md
 │   ├── runbook-migration-template.md
-│   ├── doc-gap-template.md
-│   ├── automation-template.md
-│   └── decision-template.md
+│   └── doc-gap-template.md
 ├── knowledge/
 │   ├── incidents/
 │   ├── runbooks/
-│   ├── doc-gaps/
-│   ├── automations/
-│   └── decisions/
+│   └── doc-gaps/
 └── indexes/
-    ├── incidents-index.md
     ├── runbooks-index.md
-    ├── automations-index.md
     ├── doc-gaps-index.md
-    ├── decisions-index.md
-    ├── by-platform.md
-    ├── error-signatures-by-platform.md
-    └── copilot-query-examples.md
+    └── error-signatures-by-platform.md
 ```
